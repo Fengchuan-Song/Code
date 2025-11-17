@@ -173,9 +173,11 @@ def evaluate(model, data_loader, device, epoch):
 
         loss = loss_function(pred, labels.to(device))
         accu_loss += loss
-
-        data_loader.desc = "[valid epoch {}] loss: {:.3f}, acc: {:.3f}".format(epoch,
-                                                                               accu_loss.item() / (step + 1),
-                                                                               accu_num.item() / sample_num)
+        
+        data_loader.desc = "[valid epoch {}]".format(epoch + 1)
+        data_loader.set_postfix(**{
+            'loss': accu_loss.item() / (step + 1), 
+            'accuracy': accu_num.item() / sample_num
+        })
 
     return accu_loss.item() / (step + 1), accu_num.item() / sample_num

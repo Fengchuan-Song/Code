@@ -127,8 +127,8 @@ def main(args):
         
         wandb.log({
             "epoch": epoch, 
-            "train_loss": val_loss,
-            "train_acc": val_acc
+            "val_loss": val_loss,
+            "val_acc": val_acc
         })
 
         # tags = ["train_loss", "train_acc", "val_loss", "val_acc", "learning_rate"]
