@@ -139,7 +139,7 @@ def main(args):
         # tb_writer.add_scalar(tags[4], optimizer.param_groups[0]["lr"], epoch)
 
         if val_acc > best_val_acc:
-            torch.save(model.state_dict(), "../../autodl-tmp/TrainedWeights/ViT-B/16/224-{}-acc-{}.pth".format(epoch, val_acc))
+            torch.save(model.state_dict(), "../../autodl-tmp/TrainedWeights/ViT-B-16-224-{}-acc-{}.pth".format(epoch, val_acc))
             best_val_acc = val_acc
 
 
